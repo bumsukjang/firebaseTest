@@ -1,0 +1,8 @@
+{
+  "name": "solomeFirebase",
+  "app_id": "c5e7c83c",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
