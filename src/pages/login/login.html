@@ -1,0 +1,131 @@
+<ion-content id="login-content" padding="true" class="manual-ios-statusbar-padding" sytle="position: fixed;">
+  <!--
+<div>
+    <img src="assets/imgs/loginNewLogo_border.png" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+  </div>
+<div class="spacer" style="height: 15%;"></div>
+
+<div style="height:42%;">
+  <img src="assets/imgs/loginPageBackground_top.png" style="display: block; width: 100%; height: 100%; margin-left: auto; margin-right: auto;">
+  </div>-->
+<div >
+  <div class="spacer" style="height:  40px;"></div>
+  
+  <form id="login-form" class="list" (ngSubmit)="login()" [formGroup]="loginForm" #registerForm="ngForm">
+    <ion-list id="login-list1" >
+    
+    <ion-label fixed center style="margin: auto; font-size:40px; color:  blue; width: 100%; height: 65px; ">SOLOME</ion-label>
+    <div class="spacer" style="height: 40px;"></div>
+      <ion-item  >
+        <ion-input type="text" placeholder="Email" formControlName="email" [(ngModel)]="registerCredentials.email"></ion-input>
+      </ion-item>
+
+  
+
+      <ion-item >
+        <ion-input type="password" placeholder="Password" formControlName="password" [(ngModel)]="registerCredentials.password"></ion-input>
+      </ion-item>
+
+    
+
+  <!--
+    <ion-item id="login-input1" name="UserID" color="light">
+      <ion-icon name="person" item-start ></ion-icon>
+      <ion-input type="text" [(ngModel)]="registerCredentials.username" name="registerCredentials.username" required placeholder="username or email"></ion-input>
+    </ion-item>
+    <ion-item id="login-input2" name="password" color="light">
+      <ion-icon name="lock" item-start ></ion-icon>
+      <ion-input type="password" [(ngModel)]="registerCredentials.password" name="registerCredentials.password" required placeholder="password"></ion-input>
+    </ion-item>
+    
+      <button ion-button full round color="danger" id="login-input3" type="submit" class="login-input">Login</button>
+    -->
+  
+
+    <div padding-horizontal>
+        <div class="form-error">{{loginError}}</div>	
+        <button ion-button full type="submit" >Log in</button>
+        <div class="login-footer" *ngIf="false">
+          <p>
+            <a href="#">Forgot password?</a>
+            If you're a new user, please sign up.
+          </p>
+        </div>
+      </div>
+    </ion-list>
+    
+    <!--
+    <button ion-button full outline id="login-button2" ng-click="adminLogin()">관리자 로그인</button>
+  -->
+    </form>
+    <ion-list>
+
+        <button ion-button icon-left block clear color="danger" (click)="loginWithGoogle()">
+          <ion-icon name="logo-google"></ion-icon>
+          Log in with Google
+        </button>
+
+        <button ion-button icon-left block clear (click)="loginWithFacebook()">
+            <ion-icon name="logo-facebook"></ion-icon>
+            Log in with Facebook
+          </button>
+
+        <button ion-button icon-left block clear (click)="signup()">
+          <ion-icon name="person-add"></ion-icon>
+          Sign up
+        </button>
+      </ion-list>
+<!--
+    <button ion-button block round outline color="default" class="login-input" (click)="fbLogin()">
+  Login with Facebook
+  </button>
+-->
+</div>
+<!--
+<form (ngSubmit)="login()" [formGroup]="loginForm">
+    <ion-list inset>
+
+      <ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched', 'dirty']) }">
+        <ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <div ngxErrors="email" #emailErrors="ngxErrors">
+        <div [ngxError]="['email', 'required']" [when]="['touched', 'dirty']">It should be a valid email</div>
+      </div>
+
+      <ion-item [ngClass]="{ invalid: passwordErrors.hasError('*', ['touched']) }">
+        <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+      </ion-item>
+
+      <div ngxErrors="password" #passwordErrors="ngxErrors">
+        <div [ngxError]="['minlength', 'required']" [when]="['touched']">It should be at least 5 characters</div>
+      </div>
+    </ion-list>
+
+    <div padding-horizontal>
+      <div class="form-error">{{loginError}}</div>
+
+      <button ion-button full type="submit" [disabled]="!loginForm.valid">Log in</button>
+      <div class="login-footer">
+        <p>
+          <a href="#">Forgot password?</a>
+          If you're a new user, please sign up.
+        </p>
+      </div>
+
+      <ion-list>
+
+        <button ion-button icon-left block clear (click)="loginWithGoogle()">
+          <ion-icon name="logo-google"></ion-icon>
+          Log in with Google
+        </button>
+
+        <button ion-button icon-left block clear (click)="signup()">
+          <ion-icon name="person-add"></ion-icon>
+          Sign up
+        </button>
+      </ion-list>
+    </div>
+  </form>
+  -->
+</ion-content>

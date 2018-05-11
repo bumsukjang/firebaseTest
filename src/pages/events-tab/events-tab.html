@@ -1,0 +1,63 @@
+<!--
+  Generated template for the EventsTabPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content padding>
+ <ion-list no-lines>
+    <ion-item-divider>
+        소개요청
+    </ion-item-divider>
+    <div *ngFor="let request of requests; let i of Index">
+      <ion-item text-center>
+        <ion-avatar item-start>
+          <img src="{{request.fromUser.picture_url?request.fromUser.picture_url:'assets/imgs/person.png'}}">
+        </ion-avatar>
+        <ion-avatar item-end>
+          <img src="{{request.toUser.picture_url?request.toUser.picture_url:'assets/imgs/person.png'}}">
+        </ion-avatar>
+        <h2>{{request.fromUser.name}} <ion-icon name="arrow-round-forward"></ion-icon> {{request.toUser.name}}
+        </h2>
+        <p>{{request.timeDisplay}}</p>
+      </ion-item>
+      <button ion-button outline block [disabled]="true" (click)="makeMeeting(request)">{{request.eventActionName}}</button>
+    </div>
+    <ion-item-divider>
+        받은요청
+    </ion-item-divider>
+    <div *ngFor="let request of withinRequests; let i of Index">
+      
+      <ion-item text-center>
+        <ion-avatar item-start>
+          <img src="{{request.fromUser.picture_url?request.fromUser.picture_url:'assets/imgs/person.png'}}">
+        </ion-avatar>
+        <ion-avatar item-end>
+          <img src="{{request.toUser.picture_url?request.toUser.picture_url:'assets/imgs/person.png'}}">
+        </ion-avatar>
+        <h2>{{request.fromUser.name}} <ion-icon name="arrow-round-forward"></ion-icon> {{request.toUser.name}}
+        </h2>
+        <p>{{request.timeDisplay}}</p>
+      </ion-item>
+      <button ion-button outline block [disabled]="request.roomStatus != null" (click)="makeMeeting(request)">{{request.eventActionName}}</button>
+    </div>
+    <ion-item-divider>
+        받은소개
+    </ion-item-divider>
+    <div *ngFor="let request of receivedRequests; let i of Index">
+        
+        <ion-item text-center>
+          <ion-avatar item-start>
+            <img src="{{request.fromUser.picture_url?request.fromUser.picture_url:'assets/imgs/person.png'}}">
+          </ion-avatar>
+          <ion-avatar item-end>
+            <img src="{{request.toUser.picture_url?request.toUser.picture_url:'assets/imgs/person.png'}}">
+          </ion-avatar>
+          <h2>{{request.fromUser.name}} <ion-icon name="arrow-round-forward"></ion-icon> {{request.toUser.name}}
+          </h2>
+          <p>{{request.timeDisplay}}</p>
+        </ion-item>
+        <button ion-button outline block [disabled]="request.roomStatus != 'opened'" (click)="joinRoom(request)">{{request.eventActionName}}</button>
+      </div>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,129 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      계정설정
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+	
+  <ion-list>
+		<ion-item-divider>
+				필수정보 
+		</ion-item-divider>
+		<ion-item>
+			<ion-label floating>
+				E-mail
+			</ion-label>
+			<ion-input item-content disable="true" [(ngModel)]="user.profile.email" name="user.profile.email"></ion-input>	
+						
+		</ion-item>		
+		<ion-item>
+			<ion-label floating>
+				이름
+			</ion-label>
+			<ion-input item-content [(ngModel)]="user.profile.name" name="user.profile.name"></ion-input>			
+		</ion-item>		
+		<ion-item>
+			<ion-label floating>
+				성별
+			</ion-label>
+			<ion-input item-content [(ngModel)]="user.profile.gender" name="user.profile.gender"></ion-input>			
+		</ion-item>		
+		<ion-item>
+			<ion-label floating>
+				나이
+			</ion-label>
+			<ion-input item-content [(ngModel)]="user.profile.age" name="user.profile.age"></ion-input>			
+		</ion-item>		
+		<ion-item>
+			<ion-label floating>
+				상태
+			</ion-label>
+			<ion-input item-content [(ngModel)]="user.profile.relationship_status" name="user.profile.relationship_status"></ion-input>			
+		</ion-item>
+		<ion-item>
+			<ion-label floating>
+				자기소개
+			</ion-label>
+			<ion-input item-content [(ngModel)]="user.profile.description" name="user.profile.description"></ion-input>			
+		</ion-item>
+		<ion-item>
+			
+			<ion-label floating>
+				만남목적
+			</ion-label>
+			<ion-input item-content [(ngModel)]="user.profile.meeting_for" name="user.profile.meeting_for"></ion-input>
+		</ion-item>
+		<ion-item-divider>
+				추가정보
+		</ion-item-divider>
+		<ion-item>
+			<ion-label floating>
+				거주지
+			</ion-label>
+			<ion-input item-content [(ngModel)]="user.profile.location" name="user.profile.location"></ion-input>
+		</ion-item>
+		<ion-item>
+			
+			<ion-label floating>
+				핸드폰 번호
+			</ion-label>
+			<ion-input item-content [(ngModel)]="user.profile.phoneNumber" name="user.profile.phoneNumber"></ion-input>
+		</ion-item>
+		<ion-item>
+			
+			<ion-label floating>
+				언어
+			</ion-label>
+			<ion-input item-content [(ngModel)]="user.profile.languages" name="user.profile.languages"></ion-input>
+		</ion-item>
+		<ion-item>
+			
+			<ion-label floating>
+				나이대
+			</ion-label>
+			<ion-input item-content [(ngModel)]="user.profile.age_ragnes" name="user.profile.age_ragnes"></ion-input>
+		</ion-item>
+		<ion-item>
+			
+			<ion-label floating>
+				종교
+			</ion-label>
+			<ion-input item-content [(ngModel)]="user.profile.religion" name="user.profile.religion"></ion-input>
+		</ion-item>	
+		<ion-item>
+			
+			<ion-label floating>
+				직장
+			</ion-label>
+			<ion-input item-content [(ngModel)]="user.profile.work" name="user.profile.work"></ion-input>
+		</ion-item>	
+		<ion-item>
+			
+			<ion-label floating>
+				학력
+			</ion-label>
+			<ion-input item-content [(ngModel)]="user.profile.education" name="user.profile.education"></ion-input>
+		</ion-item>	
+		<ion-item>
+			
+			<ion-label floating>
+				관심사
+			</ion-label>
+			<ion-input item-content [(ngModel)]="user.profile.interested_in" name="user.profile.interested_in"></ion-input>
+		</ion-item>	
+		<ion-item>
+			
+			<ion-label floating>
+				고향(본가)
+			</ion-label>
+			<ion-input item-content [(ngModel)]="user.profile.hometown" name="user.profile.hometown"></ion-input>
+		</ion-item>		
+		
+		
+	</ion-list>
+	<button ion-button block outline (click)="saveSetting()">저장</button>
+		<button ion-button block outline color="dark" (click)="logout()">로그아웃</button>	
+</ion-content>

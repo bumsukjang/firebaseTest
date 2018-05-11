@@ -1,0 +1,47 @@
+<!--
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+-->
+<ion-content padding>
+	<div text-center padding-vertical padding-horizontal *ngIf="!solomes.length">
+		<label>친구의 친구, 솔로미</label>
+	</div>
+	<div *ngFor="let solome of solomes">
+		<ion-card >
+			<ion-item >
+				<ion-avatar item-start>
+					<img src="{{solome.friend.picture_url?solome.friend.picture_url:'assets/imgs/person.png'}}">
+				</ion-avatar>
+				<h2>{{solome.friend.name}}님의 친구</h2>
+				<p>
+					<label *ngFor="let tag of solome.profile.tags">#{{tag}}</label>
+				</p>
+				<button ion-button clear item-end></button>
+			</ion-item>
+			<img src="{{solome.profile.picture_url?solome.profile.picture_url:'assets/imgs/person.png'}}"/>
+			<ion-card-content>
+				<ion-card-title>
+					{{solome.profile.name}} 님
+				</ion-card-title>	
+				<p>{{solome.profile.description}}</p>
+			</ion-card-content>			
+			<ion-row>
+			<ion-col col-6>
+				<button ion-button icon-left outline block [disabled]="solome.isRequested || solome.isReceived" (click)="requestMeeting(solome)">
+					<ion-icon name="thumbs-up"></ion-icon>
+					{{solome.isRequested?"요청됨":solome.isReceived?"소개받음":"소개요청"}}
+				</button>
+			</ion-col>
+			<ion-col col-6>
+				<button ion-button icon-left outline block color="danger" (click)="noWantShow(solome)">
+					<ion-icon name="thumbs-down"></ion-icon>
+					숨기기
+				</button>
+			</ion-col>
+			</ion-row>
+		</ion-card>
+	</div>
+</ion-content>
